@@ -2,7 +2,7 @@
 Overview
 ========
 
-Standardization of serialization formats for statistics in HEP
+Python implementation for the HEP statistics standard libraries
 
 * Free software: BSD 3-Clause License
 
@@ -23,27 +23,3 @@ Documentation
 
 https://python-hep-statistics-standard.readthedocs.io/
 
-
-Development
-===========
-
-To run the all tests run::
-
-    tox
-
-Note, to combine the coverage data from all the tox environments run:
-
-.. list-table::
-    :widths: 10 90
-    :stub-columns: 1
-
-    - - Windows
-      - ::
-
-            set PYTEST_ADDOPTS=--cov-append
-            tox
-
-    - - Other
-      - ::
-
-            PYTEST_ADDOPTS=--cov-append tox
