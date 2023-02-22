@@ -1,0 +1,57 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import sys
+import json
+import jsonpatch
+import argparse
+
+import difflib
+
+def diff_patch(patch):
+    output = []
+    green = '\x1b[32m'
+    red = '\x1b[31m'
+    yellow = '\x1b[33m'
+    endgreen = '\x1b[0m'
+    endyellow = '\x1b[0m'        
+    endred = '\x1b[0m'
+    
+    for op in patch:
+        if op["op"] == 'add':
+            output.append(green+ op["path"] + ": "+str(op["value"])+endgreen)
+        if op["op"] == 'replace':
+            output.append(yellow+op["path"] + ": "+str(op["value"])+endyellow)
+        elif op["op"] == 'remove':
+            output.append(red+op["path"]+endred)
+    return output
+
+def main(args):
+    try:
+        doc1 = json.load(args.FILE1)
+        doc2 = json.load(args.FILE2)
+        patch = jsonpatch.make_patch(doc1, doc2)
+        for line in diff_patch(patch):
+            print(line)
+    except KeyboardInterrupt:
+        sys.exit(1)
+
+
+def diff_files(doc1,doc2):
+    """ Diffs two JSON files and prints a patch """
+    if patch.patch:
+        print(patch.patch)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Diff two JSON files')
+    parser.add_argument('FILE1', type=argparse.FileType('r'))
+    parser.add_argument('FILE2', type=argparse.FileType('r'))
+    parser.add_argument('--indent', type=int, default=None,
+                        help='Indent output by n spaces')
+    parser.add_argument('-v', '--version', action='version',
+                        version='%(prog)s ' + jsonpatch.__version__)
+
+    args = parser.parse_args()
+    
+    main(args)
