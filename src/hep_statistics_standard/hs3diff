@@ -94,7 +94,7 @@ if __name__ == "__main__":
     parser.add_argument('FILE2', type=argparse.FileType('r'))
     parser.add_argument('--indent', type=int, default=None,
                         help='Indent output by n spaces')
-    parser.add_argument("--ignore",nargs="+",help="ignore the following top level sections")
+    parser.add_argument("--ignore",nargs="+",help="ignore the following top level sections",default=["misc"])
     parser.add_argument("--precision",type=int,help="number of decimal places to compare",default=6)
 
     args = parser.parse_args()
