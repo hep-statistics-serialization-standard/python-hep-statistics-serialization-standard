@@ -1,10 +1,10 @@
-# HS3 Utilities
+# HS$^3$ Utilities
 
 Python HS$^3$ Utilities (`hs3`) is a collection of command-line tools and
 utilities designed to support the High-Energy Physics Statistics
 Serialization Standard (HS$^3$). This package provides tools for working
 with HS$^3$ JSON files, including functionality for generating GraphML
-representations and diffing HS3 files.
+representations and diffing HS$^3$ files.
 
 ## Features
 
@@ -13,7 +13,7 @@ representations and diffing HS3 files.
 
 ## Installation
 
-You can install HS3 Utilities from PyPI using pip:
+You can install HS$^3$ Utilities from PyPI using pip:
 
 ```bash
 pip install hs3
@@ -31,7 +31,7 @@ pip install .
 
 ### hs3diff
 
-`hs3diff` is used to compare two HS3 JSON files and output the differences.
+`hs3diff` is used to compare two HS$^3$ JSON files and output the differences.
 
 ### Usage Example:
 
@@ -39,11 +39,11 @@ pip install .
 hs3diff file1.json file2.json
 ```
 
-This command will output the differences between file1.json and file2.json.
+This command will output the differences between `file1.json` and `file2.json`.
 
 ### hs3tographml
 
-`hs3tographml* converts an HS3 JSON file into a GraphML file, which can be visualized using tools like Gephi.
+`hs3tographml` converts an HS$^3$ JSON file into a GraphML file, which can be visualized using tools like Gephi.
 
 ### Usage Example:
 
@@ -51,7 +51,7 @@ This command will output the differences between file1.json and file2.json.
 hs3tographml -i model.json -o model.graphml
 ```
 
-This command will convert model.json into model.graphml.
+This command will convert `model.json` into `model.graphml`.
 
 ### Options
 - `-i`, `--input`: Input JSON file (required).
@@ -60,7 +60,7 @@ This command will convert model.json into model.graphml.
 
 ## Contributing
 
-Contributions are welcome! If you’d like to contribute to HS3
+Contributions are welcome! If you’d like to contribute to HS$^3$
 Utilities, please follow these steps:
 
 - Fork the repository.
